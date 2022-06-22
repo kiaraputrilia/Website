@@ -1,0 +1,84 @@
+/* -------------------- PROJECTS COVER -------------------- */
+
+#projects {
+    position: fixed;
+    margin: 0;
+    transition: linear all .5s;
+  }
+  
+  #projects li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #projects img {
+    max-width: 250px;
+    max-height: 250px;
+    transition: linear all .5s;
+    filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    -webkit-filter: blur(10px);
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #projects li {
+      transform: translateX(-10vw);
+    }
+  }
+  
+  /* -------------------- PROJECTS TITLE -------------------- */
+  
+  .title {
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    /* text-wrap: nowrap; */
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: linear all .5s;
+  }
+  
+  .title.show {
+    opacity: 1;
+  }
+  
+  /* -------------------- CIRCLES -------------------- */
+  
+  .circle {
+    border: 1px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotate(30deg);
+    -webkit-transform: translate(-50%,-50%) rotate(30deg);
+    opacity: 0;
+    transition: linear all .5s;
+    pointer-events: none;
+  }
+  
+  .circle:hover {
+    -webkit-filter:blur(40px);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    /* .circle {
+      transform: scale(20%);
+    } */
+  }

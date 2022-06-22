@@ -1,0 +1,139 @@
+.bottom {
+    position: absolute;
+    bottom: 2px;
+    margin-left: 6px;
+    font-family: 'Arial Narrow', Arial, sans-serif; 
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
+    z-index: 99;
+}
+
+.bottom a {
+    text-decoration: none;
+    color: #000000;
+    opacity: 1;
+    padding-right: 10px;
+}
+
+.bottom a:hover {
+    color: crimson;
+}
+
+
+.CV {
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 40px;
+    color: black;
+    position: -webkit-sticky;
+    position: fixeds;
+    top: 0;
+    text-decoration: none;
+    
+}
+
+ .rotateOne {
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(-35deg);
+    display:flex;
+    flex-flow: column nowrap;
+    position:fixed; 
+    left:450px; 
+    top:250px;
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 50px;
+    color: blue;
+ }
+
+ .rotateTwo {
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(20deg);
+    display:inline-block;
+    position:fixed; 
+    left:700px; 
+    top:150px;
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 50px;
+    color: blue;
+ }
+
+
+ .rotateThree {
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(30deg);
+    display:inline-block;
+    position:fixed; 
+    left:250px; 
+    top:750px;
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 50px;
+    color: blue;
+ }
+
+ .rotateFour {
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(5deg);
+    display:inline-block;
+    position:fixed; 
+    left:250px; 
+    top:500px;
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 50px;
+    color: blue;
+
+ }
+
+ .rotateFive {
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(60deg);
+    display:inline-block;
+    position:fixed; 
+    left:900px; 
+    top:400px;
+    font: 13px 'Arial Narrow', Arial, sans-serif; 
+    font-stretch: condensed;
+    margin: 0px 8px  0px 8px;
+	line-height: 1.25;
+    font-size: 50px;
+    color: blue;
+
+ }
+
+.button:hover {
+	background-color: white;
+}
+
+.foot {
+	font-size: 12px;
+}
+
+.highlight {
+	background-color: blue;
+	color: white;
+}
+
+a:visited{
+    text-decoration: none;
+    color: blue;
+    }
+

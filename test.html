@@ -1,0 +1,461 @@
+
+<html lang="en" >
+    <head>
+        <meta charset="utf-8">
+        
+        <base href="https://www.typeroom.eu/">
+        <title>Putrilia</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1.0, minimum-scale=1.0">
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="p4XCNnfWkmHbLWJoQ9APXSyQPWGWmvTr5XDTI3DR">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/storage/images/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/storage/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/storage/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/storage/images/favicons/site.webmanifest">
+        <link rel="mask-icon" href="/storage/images/favicons/safari-pinned-tab.svg" color="#000000">
+        <link rel="shortcut icon" href="/storage/images/favicons/favicon.ico">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="msapplication-config" content="/storage/images/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+
+        <link href="/css/app.css" rel="stylesheet">
+    </head>
+
+    <body class="en position-relative">
+        <div id="app" :class="searching ? 'searching' : ''">
+                    <div class="loader" v-if="loading" style=" position: fixed; z-index: 10000;width:100%; height:100%;"></div>
+            <div id="main">
+
+                <div id="header" class="follow_bg">
+                    <nav class="navbar navbar-expand-xl p-0 follow_bg">
+
+    <a class="navbar-brand no-padDown margLeft-xs no-ajaxy" style="margin-top: 10px;margin-right:20px" href="https://www.typeroom.eu/">
+        <img id="logo" class="" src="storage/images/logos/typeroom_logo.svg" alt="TypeRoom" style="width:185px;">
+    </a>
+
+    <button class="navbar-toggler" style="min-height:66px;" type="button" v-on:click="$refs.top_menu.classList.add('show')" aria-controls="top_menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="closeX_menu position-relative grotesk">
+                Menu
+            </span>
+    </button>
+
+    <div class="collapse navbar-collapse align-self-end grotesk" id="top_menu" ref="top_menu" style="margin-bottom:10px;font-size:0.9rem">
+            <ul class="navbar-nav follow_bg">
+
+                
+                                    <li class="nav-item">
+                        <a  class="nav-link" href="/category/scanner" title="Scanner" data-close="true">  Scanner </a>
+                    </li>
+                                    <li class="nav-item">
+                        <a  class="nav-link" href="/category/inspiration" title="Inspiration" data-close="true">  Inspiration </a>
+                    </li>
+                                    <li class="nav-item">
+                        <a  class="nav-link" href="/category/origins" title="Origins" data-close="true">  Origins </a>
+                    </li>
+                                    <li class="nav-item">
+                        <a  class="nav-link" href="/search?archive=1" title="Archive" data-close="true">  Archive </a>
+                    </li>
+                                <li class="nav-item d-none d-xl-block">
+                    <a class="nav-link no-ajaxy" href="/search" title="Search" data-close="true" @click.prevent.stop="searching = !searching">
+                        Search
+                    </a>
+                </li>
+            </ul>
+
+            <div class="d-inline-block d-xl-none" id="nav_theming">
+                <div class="grotesk d-inline-block" style="">Background</div>
+                <span @click="backGround = 'color_a'" style="background-color:#fed8ac"></span>
+                <span @click="backGround = 'color_b'" style="background-color:#f9d2e4"></span>
+                <span @click="backGround = 'color_c'" style="background-color:#d1d3e6"></span>
+                <span @click="backGround = 'color_d'" style="background-color:#d6e3d5"></span>
+                <span @click="backGround = 'color_e'" style="background-color:#ffffff"></span>
+            </div>
+
+            <div class="nav-item d-inline-block d-xl-none">
+                <a class="mob_search nav-link grotesk no-ajaxy" href="/search" title="Search" data-close="true" @click.prevent.stop="searching = !searching">
+                    Search
+                </a>
+            </div>
+
+            <a href="#" class="nav_mob-close follow_bg d-flex d-xl-none no-ajaxy" v-on:click.prevent.stop="$refs.top_menu.classList.remove('show')">
+                Close
+            </a>
+
+    </div>
+
+    <div class="nav-right-content d-none d-xl-flex">
+                    <div class="discover grotesk" style="line-height:1;">
+                <span class="small">
+                                            <a href="https://www.parachutefonts.com/typeface/Spekk" style="width:100%" target="_blank">
+                            PF Spekk: an  unconventional, warm &amp; variable new release
+                        </a>
+                                    </span>
+            </div>
+
+            <img src="assets/original/2020/12/21/SpekkTy-NEW1.gif"
+                alt="PF Spekk: an  unconventional, warm &amp; variable new release"
+                style="width:auto; height:66px;" />
+            </div>
+
+    <div class="search" ref="search" v-show="searching" >
+        <textarea class="grotesk w-100 follow_bg" name="search" id="search" cols="30" rows="10"  placeholder="Search"
+            ref="search_input"
+            v-model.trim="search_input"
+            v-click-outside="() => searching = false"
+            v-on:keyup.enter.prevent="search"
+        ></textarea>
+    </div>
+
+</nav>
+
+                </div>
+
+                <div id="content" ref="content">
+
+                    <div v-if="!content" class="content_inner layout-list hasMonitor" >
+                        
+    <div id="data-left" class="">
+                    <div class="loader">Loading...</div>
+            </div>
+
+    <div id="data-right" class="">
+                    <div class="loader">Loading...</div>
+            </div>
+
+    <div id="data-list" class="">
+        
+    <div class="article-list mob-img">
+                <div  :class="{'activate' : monitor === 'assets/original/2022/02/09/272241522_5056704304369315_689474554749248867_n.jpg' }" v-initialize="'assets/original/2022/02/09/272241522_5056704304369315_689474554749248867_n.jpg'" >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="typo-passage-x-david-einwaller-must-visit-austria-capital">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/02/09/272241522_5056704304369315_689474554749248867_n.jpg" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="typo-passage-x-david-einwaller-must-visit-austria-capital"
+                        @mouseenter="changeMonitor('assets/original/2022/02/09/272241522_5056704304369315_689474554749248867_n.jpg')"
+                        @mouseleave="changeMonitor('')" >
+                        Typo-Passage X David Einwaller: a must-visit in Austria&#039;s imperial capital  ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>1 month ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="graphic-stories-08-visual-communication-is-all-about-tolerance">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/02/07/Insta02.png" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="graphic-stories-08-visual-communication-is-all-about-tolerance"
+                        @mouseenter="changeMonitor('assets/original/2022/02/07/Insta02.png')"
+                        @mouseleave="changeMonitor('')" >
+                        Graphic Stories 08: Visual Communication is all about Tolerance ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>1 month ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="twopoints.net-x-rafael-nadal-celebrating-that-epic-rafa-win-in-129-type-only-logo-variations">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/02/02/TPN_NIKE_RAFA21_A4.gif" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="twopoints.net-x-rafael-nadal-celebrating-that-epic-rafa-win-in-129-type-only-logo-variations"
+                        @mouseenter="changeMonitor('assets/original/2022/02/02/TPN_NIKE_RAFA21_A4.gif')"
+                        @mouseleave="changeMonitor('')" >
+                        TwoPoints.Net X Rafael Nadal: celebrating THAT epic Rafa win in 129 type-only logo variations ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>1 month ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="tdc-awakens-a-talk-with-ksenya-samarskaya-tdc-first-managing-director-ever">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/27/18.png" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="tdc-awakens-a-talk-with-ksenya-samarskaya-tdc-first-managing-director-ever"
+                        @mouseenter="changeMonitor('assets/original/2022/01/27/18.png')"
+                        @mouseleave="changeMonitor('')" >
+                        TDC awakens: a talk with Ksenya Samarskaya, TDC’s first managing director ever ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / Inspiration</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="mucho-x-visa-a-bold-impactful-and-energetic-brand-new-identity-system-and-a-bespoke-typeface-for-all-things-visa">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/19/271794571_153129133733428_2034349502669624541_n.jpg" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="mucho-x-visa-a-bold-impactful-and-energetic-brand-new-identity-system-and-a-bespoke-typeface-for-all-things-visa"
+                        @mouseenter="changeMonitor('assets/original/2022/01/19/271794571_153129133733428_2034349502669624541_n.jpg')"
+                        @mouseleave="changeMonitor('')" >
+                        Mucho X Visa: a bold, impactful, and energetic brand new identity system &amp; a bespoke typeface for all things Visa ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="think-big-collins-reimagines-a-brand-new-system-for-openweb-to-help-publishers-thrive">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/13/COLLINS-reimagines-audience-platform-OpenWeb-2022-Hero.jpg" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="think-big-collins-reimagines-a-brand-new-system-for-openweb-to-help-publishers-thrive"
+                        @mouseenter="changeMonitor('assets/original/2022/01/13/COLLINS-reimagines-audience-platform-OpenWeb-2022-Hero.jpg')"
+                        @mouseleave="changeMonitor('')" >
+                        Think big! COLLINS reimagines a brand new system for OpenWeb to help publishers thrive ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="small-and-massive-jan-tschicholds-brilliance-in-deutsche-nationalbibliotheks-latest-virtual-exhibition">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/10/4.png" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="small-and-massive-jan-tschicholds-brilliance-in-deutsche-nationalbibliotheks-latest-virtual-exhibition"
+                        @mouseenter="changeMonitor('assets/original/2022/01/10/4.png')"
+                        @mouseleave="changeMonitor('')" >
+                        Small and massive: Jan Tschichold&#039;s brilliance in Deutsche Nationalbibliothek&#039;s latest virtual exhibition ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / Origins</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="vasava-x-mango-exploring-the-variable-beauty-of-mediterranean">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/07/Screenshot 2022-01-07 at 6.36.03 PM.png" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="vasava-x-mango-exploring-the-variable-beauty-of-mediterranean"
+                        @mouseenter="changeMonitor('assets/original/2022/01/07/Screenshot 2022-01-07 at 6.36.03 PM.png')"
+                        @mouseleave="changeMonitor('')" >
+                        Vasava X Mango: exploring the variable beauty of Mediterranean ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="only-x-british-international-research-institutes-a-brilliant-multi-cultural-rebranding">
+                        <img class="img-fluid lazyload" data-src="assets/original/2022/01/04/BIRI_Logo.width-860.jpg" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="only-x-british-international-research-institutes-a-brilliant-multi-cultural-rebranding"
+                        @mouseenter="changeMonitor('assets/original/2022/01/04/BIRI_Logo.width-860.jpg')"
+                        @mouseleave="changeMonitor('')" >
+                        Only X British International Research Institutes: a brilliant multi-cultural rebranding ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>2 months ago / scanner</small></p>
+            </div>
+                <div >
+                <div class="d-xl-none padDown-xs">
+                    
+                    <a href="lttrink-skeleton-type-design-in-full-force">
+                        <img class="img-fluid lazyload" data-src="assets/original/2021/12/22/skeleton_type_design_lttrink_tool_10.jpg" alt="article image" style="max-width: 100%;">
+                    </a>
+                </div>
+                <h1>
+                    <a href="lttrink-skeleton-type-design-in-full-force"
+                        @mouseenter="changeMonitor('assets/original/2021/12/22/skeleton_type_design_lttrink_tool_10.jpg')"
+                        @mouseleave="changeMonitor('')" >
+                        LTTR/INK: skeleton type design in full force  ¶
+                    </a>
+                </h1>
+                <p class="grotesk"><small>3 months ago / scanner</small></p>
+            </div>
+        
+    </div>
+
+    <div class="grotesk borderUp padY-xxs padX-xs">
+        <a href="https://www.typeroom.eu?query=&amp;page=3" data-close="true">Load more &gt;</a>
+    </div>
+
+    </div>
+
+
+
+                    </div>
+
+                    <component v-else :is="ajax" />
+
+                </div>
+
+                <div id="footer" class="follow_bg">
+                    <div class="d-flex justify-content-start align-items-center">
+
+    <a style="width:200px;margin-left:20px;text-decoration: none;color:black" href="/about" id="footer-info">
+        <span class="tycon icon-info" style="max-width:20px;font-size: 22px;"></span>
+    </a>
+
+
+    <div class="subscribe" style="width:145px;">
+
+        <span style="font-size:0.9rem;cursor:pointer;" class="grotesk" @click="$modal.show('subscribe')" >
+        Subscribe
+        </span>
+
+        <v-modal name="subscribe" draggable=".modal_head" reset :width="1024" height="auto" @opened="initReCaptcha" @closed="resetReCaptcha">
+
+            <div class="custom_modal">
+
+                <div class="modal_head follow_bg">
+                    <div class="title grotesk">Join Typeroom</div>
+
+                    <span @click="$modal.hide('subscribe')" class="tycon icon-close"></span>
+                </div>
+
+                <div class="modal_body" style="height: unset; background-color: #222222;">
+                    <p class="padDown-xl margDown-xl" style="font-size:5rem;">join the typeroom<br>community now!</p>
+                    <div>
+                        <p class="m-0 grotesk" >
+                            <span >
+                                Never miss a post. Subscribe to our Newsletter. like us on Facebook. follow us on Twitter. repost us on Tumblr.
+                            </span>
+                        </p>
+                        <p class="grotesk">
+                            <span >Be part of our community and have your creative climax one font at a time.</span>
+                        </p>
+
+                        <p class="m-0 mb-2 grotesk" v-text="!subscribed? 'Subscribe here /' : `Thank you ${form.email} for subscribing to our Newsletter`">
+
+                        </p>
+                        <form v-show="!subscribed" id="subscribe" action="#" @submit.prevent="executeReCaptcha" method="post" style="margin:0; position:relative;">
+                            <div class="form">
+                                <input id="email" name="email" type="email" class="form-control follow_bg" v-model="form.email" placeholder="type your email" >
+                                <div id='recaptcha' class="g-recaptcha" data-size="invisible"></div>
+                                <button type="submit" class="submit" value="SUBSCRIBE"
+                                :disabled="subscribing"
+
+                                style="position:absolute;">
+                                </button>
+                                
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+                <div class="modal_footer"></div>
+
+            </div>
+
+        </v-modal>
+    </div>
+
+    <div style="width:302px" id="theming">
+        <div class="grotesk d-inline-block" style="font-size:0.9rem">Background</div>
+        <span @click="backGround = 'color_a'" style="background-color:#fed8ac"></span>
+        <span @click="backGround = 'color_b'" style="background-color:#f9d2e4"></span>
+        <span @click="backGround = 'color_c'" style="background-color:#d1d3e6"></span>
+        <span @click="backGround = 'color_d'" style="background-color:#d6e3d5"></span>
+        <span @click="backGround = 'color_e'" style="background-color:#ffffff"></span>
+    </div>
+
+    <div style="display:flex;align-items:center;" id="footer-social" class="shareLinks follow_bg">
+        <span class="grotesk margLeft-xs d-none d-xl-block" style="font-size:0.9rem">Follow us > </span>
+        <a href="https://www.facebook.com/typeroom.eu/" class="margLeft-sm">
+            <span class="tycon icon-facebook" ></span>
+        </a>
+        <a href="https://twitter.com/typeroom_eu" class="margLeft-sm">
+            <span class="tycon icon-twitter" ></span>
+        </a>
+        <a href="https://www.instagram.com/typeroom.eu/" class="margLeft-sm" target="_blank">
+            <span class="tycon icon-instagram" ></span>
+        </a>
+        <a href="https://gr.pinterest.com/typeroom_eu/" class="margLeft-sm" target="_blank">
+            <span class="tycon icon-pinterest" ></span>
+        </a>
+    </div>
+
+    
+
+    <div style="width:225px; margin-left:auto; text-align:left" id="sponsored-container">
+        <span class="grotesk" id="sponsoredBy"><small class="small">Sponsored by:</small></span>
+        <a href="https://www.parachutefonts.com/" target="_blank">
+            <img class="w-100" src="storage/images/logos/parachute_logo.svg" alt="parachute logo" style="max-width:90px">
+        </a>
+    </div>
+
+    <div id="article-monitor" v-show="hasMonitor">
+        <div class="wrapper">
+
+
+
+            
+                                                <monitor
+                        title="Origins"
+                        width="16%"
+                        height="24%"
+                        :pivot-x="0.25"
+                        :pivot-y="0.5"
+                        :uid="2">
+                        <div class="modal_body modal-left">
+                                                        <a href="https://www.typeroom.eu/category/origins" style="width:100%" target="_blank">
+                                <img data-src="assets/large/2021/05/24/archives_design0 (1).jpeg"
+                                alt="Origins"
+                                style="object-fit:cover;height:100%;"
+                                class="lazyload"/>
+                            </a>
+                                                    </div>
+                    </monitor>
+                                                        
+            <monitor title="Monitor" :show="true" :uid="1" width="42%" height="56%">
+                <div v-if="monitor" class="modal_body bck-anim" >
+                    <img :data-src="monitor" alt="" style="object-fit:cover;height:100%;" class="lazyload"/>
+                </div>
+            </monitor>
+
+        </div>
+    </div>
+
+</div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+        
+        <script src="//www.instagram.com/embed.js"></script>
+        <script async src="/js/app.js"></script>
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102073996-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-102073996-1');
+        </script>
+    </body>
+</html>
