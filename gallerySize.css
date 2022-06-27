@@ -1,0 +1,207 @@
+/* -------------------- IMAGE GALLERY -------------------- */
+
+#gallery {
+    padding: 0;
+    margin: 0;
+    transition: linear all .5s;
+    position: fixed;
+    width: 100vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  
+  #scroll-wrapper {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  #scroll-wrapper > img {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: zoom-in;
+  }
+  
+  
+  
+  /* -------------------- IMAGE ENLARGE -------------------- */
+  
+  object {
+    height: 100vh;
+    width: 100vw;
+    float: left;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    z-index: 900;
+    display: none;
+  }
+  
+  object img {
+    max-height: 100%;
+    max-width: 100%;
+    float: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  /* -------------------- INFO CONTAINER & TEXT -------------------- */
+  
+  #info-container {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 660px;
+    height: 680px;
+    background-color: #f0ebbe;
+    left: calc(50vw - 300px);
+    top: calc(50vh - 340px);
+    display: none;
+  }
+  
+  #info-container ul {
+    display: block;
+    margin-left: 30px;
+    padding: 0;
+    list-style: circle;
+  }
+  
+  #info-text {
+    overflow: scroll;
+    width: 580px;
+    height: 200px;
+    padding: 30px;
+    padding-bottom: 0;
+    margin-top: -10px;
+  }
+  
+  #info-text-long {
+    overflow: scroll;
+    width: 580px;
+    height: 580px;
+    padding: 30px;
+    padding-bottom: 0;
+  }
+  
+  #info-container center {
+    position: sticky;
+    width: 100%;
+    margin-top: 25px;
+    left: 0;
+    bottom: 25px;
+  }
+  
+  #info-text a {
+    border-bottom: 1px solid #000;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #info-container {
+      width: 90vw;
+      height: 500px;
+      left: 5vw;
+      top: calc(50vh - 250px);
+    }
+    #info-text {
+      width: calc( 100% - 20px );
+      height: calc( 100% - 48vw - 100px );
+      margin-top: 10px;
+      padding: 10px;
+    }
+    #info-text-long {
+      overflow: scroll;
+      width: calc( 100% - 20px );
+      height: calc( 100% - 80px );
+      padding: 10px;
+    }
+  }
+  
+  /* -------------------- BOOK IMAGE SLIDE -------------------- */
+  
+  #info-container #bookpic {
+    width: 600px;
+    height: 360px;
+    margin: 30px;
+    margin-bottom: 0px;
+  }
+  
+  .SlideImg {
+    display: none;
+    position: absolute;
+  }
+  
+  #info-container img {
+    max-width: 600px;
+    max-height: 360px;
+    position: absolute;
+    left: 300px;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+  }
+  
+  #bookpic #leftArrow {
+    width: 290px;
+    height: 360px;
+    position: absolute;
+    padding-left: 10px;
+    text-align: left;
+    line-height: 360px;
+  }
+  
+  #bookpic #rightArrow {
+    width: 290px;
+    height: 360px;
+    position: absolute;
+    left: 330px;
+    padding-right: 10px;
+    text-align: right;
+    line-height: 360px;
+  }
+  
+  #leftArrow::selection,
+  #rightArrow::selection {
+    background: rgba(0,0,0,0);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #info-container #bookpic {
+      width: 80vw;
+      height: 48vw;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      margin-top: 10px;
+    }
+    #info-container img {
+      max-width: 80vw;
+      max-height: 48vw;
+      left: 40vw;
+    }
+    #bookpic #leftArrow {
+      width: calc( 40vw - 5px );
+      height: 48vw;
+      line-height: 48vw;
+      padding-left: 5px;
+    }
+    #bookpic #rightArrow {
+      width: calc( 40vw - 5px );
+      height: 48vw;
+      left: 45vw;
+      line-height: 48vw;
+      padding-right: 5px;
+    }
+    #leftArrow::selection,
+    #rightArrow::selection {
+      background: rgba(0,0,0,0);
+    }
+  }

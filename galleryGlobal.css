@@ -1,0 +1,375 @@
+body {
+    border: 0;
+    margin: 0;
+    top: 0;
+    font-family: monospace;
+    font-size: 11pt;
+    line-height: 15pt;
+  }
+  
+  ul {
+    list-style: none;
+    margin-top: 0px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  a:after {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  p {
+    margin-top: 0px;
+  }
+  
+  ::selection {
+    background: #fff;
+  }
+  
+  /* -------------------- MENU  -------------------- */
+  
+  #chen {
+    position: fixed;
+    top: 48vh;
+    left: 20px;
+    display: inline-block;
+    z-index: 99;
+  }
+  
+  #plus {
+    font-size: 15pt;
+    position: fixed;
+    float: right;
+    top: 48vh;
+    right: 20px;
+    text-align: right;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  #menu {
+    margin: 0px;
+    display: inline-block;
+    position: fixed;
+    float: right;
+    top: 48vh;
+    right: 40px;
+    text-align: right;
+    z-index: 100;
+  }
+  
+  #middle {
+    font-style: italic;
+    position: fixed;
+    top: 48vh;
+    left: 50vw;
+    transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
+    z-index: 99;
+  }
+  
+  select {
+    -webkit-appearance: none;
+    border: 0px;
+    padding: 0px;
+    background-color: rgba(0,0,0,0);
+  }
+  
+  #m1,#m2,#m3,#m4,#m5 {
+    cursor: pointer;
+  }
+  
+  #m2:hover,#m3:hover,#m4:hover,#m5:hover {
+    text-decoration: line-through;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #middle {top: 54vh;}
+    #menu {right: 30px;}
+    #plus {right: 10px;}
+    #chen {left: 10px;}
+  }
+  
+  /* -------------------- PROJECT TITLES -------------------- */
+  
+  .top {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+    cursor: pointer;
+  }
+  
+  .top a:hover {
+    text-decoration: line-through;
+  }
+  
+  #titles a.selected {
+    text-decoration: line-through;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .top {
+      width: calc( 100vw - 20px );
+      position: fixed !important;
+      top: 10px;
+      left: 10px;
+    }
+  }
+  
+  /* -------------------- BUTTONS  -------------------- */
+  
+  button,.button {
+    margin: 20px;
+    width: 105px;
+    height: 40px;
+    -webkit-appearance: none;
+    outline: 0;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid rgba(0,0,0,0);
+    font-size: 12pt;
+    font-family: monospace;
+    font-style: italic;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  #project-info, #buy-book, #clear,
+  #project-info-blur, #buy-book-blur, #clear-blur {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  #back, #back-blur {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  #buy-book, #buy-book-blur {
+    bottom: 80px;
+  }
+  
+  #project-info-blur,#buy-book-blur,#clear-blur,#enter-blur {
+    transition: linear all .5s;
+    border: 1px solid black;
+  }
+  
+  #back-blur {
+    transition: linear all .5s;
+    border: 1px dashed #000;
+  }
+  
+  #project-info-blur:hover,
+  #buy-book-blur:hover,
+  #back-blur:hover,
+  #clear-blur:hover,
+  #enter-blur:hover {
+    -webkit-filter: blur(40px);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #project-info, #buy-book, #clear,
+    #project-info-blur, #buy-book-blur, #clear-blur {
+      right: 0px;
+      bottom: 0px;
+    }
+  
+    #buy-book, #buy-book-blur {
+      bottom: 50px;
+    }
+  
+    #back, #back-blur {
+      left: 0px;
+      bottom: 0px;
+    }
+  }
+  
+  
+  /* -------------------- SUBSCRIBE  -------------------- */
+  
+  #subscribe-container {
+    position: fixed;
+    width: 400px;
+    height: 280px;
+    padding: 30px;
+    background-color: #fff;
+    left: calc(50vw - 230px);
+    top: calc(50vh - 170px);
+    display: none;
+    z-index: 100;
+  }
+  
+  .submit {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  
+  #subscribe-container p {
+    padding: 5px 0px;
+    margin: 0px;
+    width: 340px;
+  }
+  
+  #subscribe-container input[type="email"] {
+    width: 75%;
+    outline: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #000;
+    color: black;
+    font-size: 12pt;
+    font-family: monospace;
+    padding: 5px;
+  }
+  
+  ::placeholder {
+    color: grey;
+    opacity: 1;
+  }
+  
+  #email-blur,
+  #submit-blur {
+    transition: linear all .5s;
+    border: 1px solid #000;
+  }
+  
+  #email-blur:hover,
+  #submit-blur:hover {
+    -webkit-filter: blur(20px);
+  }
+  
+  #alert {
+    font-style: italic;
+    display: none;
+    color: #f00;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #subscribe-container {
+      width: 76vw;
+      height: 200px;
+      left: 4vw;
+    }
+    .submit {
+      right: 0px;
+      bottom: 0px;
+    }
+  }
+  
+  
+  /* -------------------- ABOUT -------------------- */
+  
+  #about-full {
+    position: fixed;
+    padding: 20px;
+    z-index: 99;
+    top: 0;
+    display: none;
+    transition: linear all .5s;
+  }
+  
+  #about-full a,
+  #newsletter {
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+  }
+  
+  a#news-menu {
+    cursor: pointer;
+    text-decoration: none;
+    border-bottom: 0;
+  }
+  
+  #news-list {
+    display: none;
+    margin-left: 285px;
+    margin-top: -1em;
+  }
+  
+  #blur-bg {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    display: none;
+  }
+  
+  .blur {-webkit-filter: blur(30px);}
+  
+  #projects,#overview-container,#chen,#overview {
+    transition: linear all .5s;
+  }
+  
+  #overview {
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+  }
+  
+  #overview a {
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+  }
+  
+  #line-break {
+    display: none;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    #about-full {
+      padding: 10px;
+      width: calc( 100% - 20px );
+    }
+    #overview {
+      padding: 10px;
+      width: calc( 100% - 20px );
+    }
+    #line-break {
+      display: block;
+    }
+    a#news-menu {
+      /* display: block; */
+    }
+    #news-list {
+      margin-left: 5px;
+      width: calc( 100% - 45px );
+  
+    }
+    #news-list li {
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  
+  /* -------------------- ERROR MESSAGE  -------------------- */
+  
+  #errorMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+  }
