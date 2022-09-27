@@ -1,0 +1,298 @@
+
+body{
+	overflow: hidden;
+  	background-color: white;
+  	box-sizing: border-box;
+	font-family: Arial Narrow, sans-serif;
+	font-size: 20px;
+}
+
+#container {
+  width: 95vw;
+  height: 90vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  padding: 30px;
+  position: absolute;
+}
+
+.header{
+	width: 100%;
+    font-family: Arial Narrow;
+	font-size: 40px;
+	text-transform: uppercase;
+    text-align: center;
+	line-height: 35px;
+	padding-top: 50px;
+	text-decoration: none;
+    color: blue;
+
+}
+
+.header:hover{
+	color: forestgreen;
+}
+
+
+.a{
+	color: blue;
+	text-decoration: none;
+	border: 3px solid forestgreen;
+	border-radius: 20px;
+	line-height: 25px;
+	padding: 5px 15px 5px 15px;
+	margin-top: 8px;
+}
+
+.a:hover{
+	color: #F2EFE4;
+	background: forestgreen;
+	text-decoration: none;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.draggable {
+	position: absolute;
+	filter: grayscale(100%);
+  	z-index: 9;
+}
+
+.draggable:hover{
+	filter: none;
+}
+
+.project img{
+	height: auto;
+	width: 300px;
+}
+
+.ex img{
+	height: auto;
+	width: 200px;
+}
+
+#one{
+	top: 10%;
+	left: 75%;
+}
+
+#one img{
+	width: 400px;
+	height: auto;
+}
+
+#two{
+	top: 40%;
+	left: 12%;
+}
+
+#three{
+	left: 3%;
+	top: 60%;
+}
+
+#three img{
+    width: 250px;
+    height: auto;
+}
+
+#four{
+	top: 25%;
+	left: 50%;
+}
+
+#four img{
+	width: 500px;
+    height: auto;
+}
+
+
+#five{
+	top: 45%;
+	left: 35%;
+}
+
+#five img{
+	width: 500px;
+    height: auto;
+}
+
+#six{
+	top: 70%;
+	left: 60%;
+}
+
+#six img{
+	width: 400px;
+    height: auto;
+}
+
+#seven{
+	top:  40%;
+	left: 80%;
+}
+
+#eight{
+	top: 75%;
+	left: 10%;
+}
+
+#nine{
+	top: 50%;
+	left: 60%;
+}
+
+#ten{
+	top:  25%;
+	left: 70%;
+}
+
+#eleven{
+	top: 11%;
+	left: 44%;
+}
+
+#twelve{
+	top: 10%;
+	left: 60%;
+}
+
+#thirteen{
+	top: 75%;
+	left: 75%;
+}
+
+#fourteen{
+	top:  15%;
+	left: 10%;
+}
+
+#fifteen{
+	top: 70%;
+	left: 35%;
+}
+
+#sixteen{
+	top: 50%;
+	left: 80%;
+}
+
+#seventeen{
+	top:  50%;
+	left: 90%;
+}
+
+#eighteen{
+	top: 9%;
+	left: 25%;
+}
+
+#nineteen{
+	top: 5%;
+	left: 50%;
+}
+
+#twenty{
+	top: 10%;
+	left: 10%;
+}
+
+#twentyOne{
+	top:  45%;
+	left: 5%;
+}
+
+#twentyTwo{
+	top: 35%;
+	left: 35%;
+}
+
+#twentyThree{
+	top: 80%;
+	left: 10%;
+}
+
+#twentyFour{
+	top:  60%;
+	left: 70%;
+}
+
+#twentyFive{
+	top: 25%;
+	left: 9%;
+}
+
+#twentySix{
+	top: 50%;
+	left: 5%;
+}
+
+#twentySeven{
+	top: 65%;
+	left: 50%;
+}
+
+#twentyEight{
+	top: 30%;
+	left: 40%;
+}
+
+#twentyNine{
+	top:  3%;
+	left: 5%;
+}
+
+#thirty{
+	top: 50%;
+	left: 35%;
+}
+
+#thirtyOne{
+	top: 10%;
+	left: 10%;
+}
+
+#thirtyTwo{
+	top:  70%;
+	left: 40%;
+}
+
+#thirtyThree{
+	top: 10%;
+	left: 30%;
+}
+
+#thirtyFour{
+	top: 50%;
+	left: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
