@@ -108,26 +108,26 @@ ul, ol, li {
 	
 	
 	
-// event
+// pasta
 
-.event {
-	color: #909; 
+.pasta {
+	color: #FF8C00; 
 	text-decoration: none;}
 
-.event a:link {
-	color: #909; 
+.pasta a:link {
+	color: #FF8C00; 
 	text-decoration: none;}
 
-.event a:visited {
-	color: #909; 
+.pasta a:visited {
+	color: #FF8C00; 
 	text-decoration: none;}
 
-.event a:hover {
+.pasta a:hover {
 	color: #FFF; 
-	background-color: #909;
+	background-color: #FF8C00;
 	text-decoration: none;}
 
-.event a:active { 
+.pasta a:active { 
 	color: #FFF; 
 	text-decoration: none;}
 	
