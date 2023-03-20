@@ -7,14 +7,15 @@
 		<link rel="stylesheet" type="text/css" media="all" href="fromScratch.css" />
 		<script type="text/javascript" src="fromScratch.js"></script>
 	</head>
-<p>Ella's family invited me to my first ~American~ Thanksgiving dinner. We cooked a lot of dishes, where each one of us were assigned a duty. All the dishes were such a gastronomic delight! When I arrived at their house, Ella made me try her:</p>
+<p>Ella's family invited me to my first ~American~ Thanksgiving dinner. We cooked a lot of dishes, where each one of us were assigned a duty. All the dishes were such a gastronomic delight!</p>
 
         <div>
           
             <!-- img element without src attribute -->
             <img id="image" src="" />
         </div>
-     
+ <br>
+ When I arrived at their house, Ella made me try her    
 <button type="button"
             onclick="show()" id="btnID">
             homemade pie, IT WAS SO GOOD!!!!
@@ -200,6 +201,26 @@ We also made:
                 let image = document.getElementById("image");
      
                 image.src = "nov25_7.png"     
+                document.getElementById("btnID")
+                        .style.display = "none";
+            }
+        </script>
+
+
+<br><br>
+<button type="button"
+            onclick="show11()" id="btnID">
+            Kitchen views  
+        </button>
+     
+        <script>
+            function show11() {
+     
+                /* Get image and change value
+                of src attribute */
+                let image = document.getElementById("image");
+     
+                image.src = "nov25.gif"     
                 document.getElementById("btnID")
                         .style.display = "none";
             }
