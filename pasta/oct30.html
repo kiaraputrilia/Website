@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+	<head>
+		<title>OCTOBER 30, 2021</title>
+		<meta http-equiv="Content-Type" content="text/xhtml; charset=utf-8" />
+		<meta http-equiv="Title" content="(party) per bend sinister" />
+		<link rel="stylesheet" type="text/css" media="all" href="fromScratch.css" />
+		<script type="text/javascript" src="fromScratch.js"></script>
+	</head>
+
+        <div>
+          
+            <!-- img element without src attribute -->
+            <img id="image" src="" />
+        </div>
+     
+<button type="button"
+            onclick="show()" id="btnID">
+            told ya
+        </button>
+     
+        <script>
+            function show() {
+     
+                /* Get image and change value
+                of src attribute */
+                let image = document.getElementById("image");
+     
+                image.src = "oct30.gif"     
+                document.getElementById("btnID")
+                        .style.display = "none";
+            }
+        </script>
+
+<button type="button"
+            onclick="show2()" id="btnID">
+            sexy
+        </button>
+     
+        <script>
+            function show2() {
+     
+                /* Get image and change value
+                of src attribute */
+                let image = document.getElementById("image");
+     
+                image.src = "oct30.png"     
+                document.getElementById("btnID")
+                        .style.display = "none";
+            }
+        </script>
+
+    </body>
+    </html>
+	
